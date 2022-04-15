@@ -1,0 +1,19 @@
+name: Krajina
+version: 1.0
+main: krajina.MainKrajina
+api-version: 1.18
+
+commands:
+  +jama:
+  +udoli:
+  +kopec:
+  +kopecek:
+  +jezero:
+  +jeskyne:
+  +cesta:
+  +trava:
+  +zarovnejPovrch:
+  +ostrovObdelnik:
+  +ostrovKruh:
+  +kacejStrom:
+  +kacejLes:
