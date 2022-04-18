@@ -12,8 +12,10 @@ commands:
   +jeskyne:
   +cesta:
   +trava:
-  +zarovnejPovrch:
-  +ostrovObdelnik:
-  +ostrovKruh:
   +kacejStrom:
   +kacejLes:
+  +ostrovObdelnik:
+  +ostrovKruh:
+  +ostrovObdAbs:
+  +ostrovKruhAbs:
+  +zarovnejPovrch:

@@ -24,17 +24,32 @@ public class Jeskyne extends PlayerCommandExecutor {
                     double yd = y - playerLocation.getY();
                     double zd = z - playerLocation.getZ();
                     double vzdalenost = Math.sqrt(xd * xd + yd * yd + zd * zd);
+                    Block aktualniBlok = world.getBlockAt(poziceXYZ);
 
+                    // vyčištění prostoru
+                    if ((vzdalenost <= polomer + 1) && (aktualniBlok.getY() >= playerLocation.getY())) {
+                        aktualniBlok.setType(Material.AIR);
+                    }
+
+                    // vytvoření podlahy
+                    if ((vzdalenost <= polomer + 1) && (aktualniBlok.getY() == playerLocation.getY())) {
+                        aktualniBlok.setType(Material.DIAMOND_BLOCK);
+                    }
+
+                    // stavba jeskyně
                     if ((vzdalenost >= polomer - 1) && (vzdalenost <= polomer + 1)) {
-
-                        Block aktualniBlok = world.getBlockAt(poziceXYZ);
-
                         if ((aktualniBlok.getType().equals(Material.AIR))) {
                             aktualniBlok.setType(Material.DIAMOND_BLOCK);
                         }
                     }
-                    Block lampa = world.getBlockAt(playerLocation);
+
+                    //  umístění 2 lamp
+                    Block lampa = world.getBlockAt(new Location(world, playerLocation.getX(), playerLocation.getY()+1, playerLocation.getZ() ));
                     lampa.setType(Material.LANTERN);
+                    Location lanternLocation1 = new Location(world, playerLocation.getX(), playerLocation.getY() + (polomer - 2), playerLocation.getZ());
+                    Block lampa1 = world.getBlockAt(lanternLocation1);
+                    lampa1.setType(Material.LANTERN);
+
                 }
             }
         }

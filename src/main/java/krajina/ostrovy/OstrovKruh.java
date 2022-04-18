@@ -16,13 +16,13 @@ public class OstrovKruh extends PlayerCommandExecutor {
         int polomer = hloubka * 2;
 
         for (int i = 0; i < hloubka; i++) {
-            postavZaklad(world, playerLocation, polomer + 2 * i);
+            postavDesku(world, playerLocation, polomer + 2 * i);
             playerLocation = playerLocation.add(-1, -1, -1);
         }
         return true;
     }
 
-    private void postavZaklad(World svet, Location misto, int polomer) {
+    private void postavDesku(World svet, Location misto, int polomer) {
         for (int i = -polomer; i < polomer; i++) {
             for (int j = -polomer; j < polomer; j++) {
                 Location pozice = misto.clone().add(i, 0, j);

@@ -1,39 +1,43 @@
 package krajina.ostrovy;
 
-import krajina.poloha.PolohaAbs;
+import krajina.PlayerCommandExecutor;
+import krajina.poloha.AbsLocation;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 
-public class OstrovObdelnikAbs {
-    private final World svet;
-    private final PolohaAbs pocatekOstrova;
+public class OstrovObdelnikAbs extends PlayerCommandExecutor {
     private final int delkaOstrova;
     private final int sirkaOstrova;
 
-    public OstrovObdelnikAbs(Location pocatekOstrova, int sirkaOstrova, int delkaOstrova) {
-        this.svet = pocatekOstrova.getWorld();
-        this.pocatekOstrova = new PolohaAbs(pocatekOstrova);
+    public OstrovObdelnikAbs(int sirkaOstrova, int delkaOstrova) {
         this.sirkaOstrova = sirkaOstrova;
         this.delkaOstrova = delkaOstrova;
     }
 
-    public void postavOstrov() {
+    private void postavOstrov(Location pocatekOstrova) {
         int hloubka = 25;
-        PolohaAbs pocatekDesky = pocatekOstrova;
+        AbsLocation pocatekDesky = new AbsLocation(pocatekOstrova);
         for (int i = 0; i < hloubka; i++) {
-            postavZaklad(pocatekDesky, sirkaOstrova + 2 * i, delkaOstrova + 2 * i);
+            postavDesku(pocatekDesky, sirkaOstrova + 2 * i, delkaOstrova + 2 * i, pocatekOstrova.getWorld());
             pocatekDesky = pocatekDesky.plus(-1, -1, -1);
         }
     }
 
-    private void postavZaklad(PolohaAbs pocatekDesky, int sirkaOstrova, int delkaOstrova) {
+    private void postavDesku(AbsLocation pocatekDesky, int sirkaOstrova, int delkaOstrova, World svet) {
         for (int i = 0; i < sirkaOstrova; i++) {
             for (int j = 0; j < delkaOstrova; j++) {
-                Block aktualniBlok = svet.getBlockAt(pocatekDesky.plus(i, 0, j).toAbsLocation());
+                Block aktualniBlok = svet.getBlockAt(pocatekDesky.plus(i, 0, j).toLocation());
                 aktualniBlok.setType(Material.GRASS_BLOCK);
             }
         }
+    }
+
+    @Override
+    public boolean onCommandPlayer(Player player, World world, Location playerLocation, String[] args) {
+        postavOstrov(playerLocation);
+        return false;
     }
 }

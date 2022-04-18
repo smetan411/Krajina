@@ -24,6 +24,7 @@ public final class MainKrajina extends JavaPlugin {
     @Override
     public void onEnable() {
 
+
         World world = getServer().getWorlds().get(0);
         getCommand("+jama").setExecutor(new Jama());
         getCommand("+udoli").setExecutor(new Udoli());
@@ -37,8 +38,8 @@ public final class MainKrajina extends JavaPlugin {
         getCommand("+kacejLes").setExecutor(new KaceniLesa(world));
         getCommand("+ostrovObdelnik").setExecutor(new OstrovObdelnik());
         getCommand("+ostrovKruh").setExecutor(new OstrovKruh());
-    //    getCommand("+ostrovObdAbs").setExecutor(new OstrovObdelnikAbs(pocatekOstrova, 50, 50));
-     //   getCommand("+ostrovKruhAbs").setExecutor(new OstrovKruhAbs(pocatekOstrova, 50));
+        getCommand("+ostrovObdAbs").setExecutor(new OstrovObdelnikAbs( 25, 25));
+        getCommand("+ostrovKruhAbs").setExecutor(new OstrovKruhAbs(50));
         getCommand("+zarovnejPovrch").setExecutor(new ZarovnaniPovrchu());
 
     }
