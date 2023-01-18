@@ -11,7 +11,7 @@ public class Cesta extends PlayerCommandExecutor {
     @Override
     public boolean onCommandPlayer(Player player, World world, Location playerLocation, String[] args) {
         int sirkaCesty = 2;
-        int delkaCesty = 25;
+        int delkaCesty = 500;
 
         if (args.length > 0) {
             try {
@@ -29,6 +29,14 @@ public class Cesta extends PlayerCommandExecutor {
                 playerLocation.add(0, 0, 1);
                 Block aktualniBlok = world.getBlockAt(playerLocation);
                 aktualniBlok.setType(Material.OAK_PLANKS);
+                //nad deskou vzduch
+                playerLocation.add(0, 1, 0);
+                for (int k = 0; k < 35; k++) {
+                    Block novyBlok = world.getBlockAt(playerLocation);
+                    novyBlok.setType(Material.AIR);
+                    playerLocation.add(0, 1, 0);
+                }
+                playerLocation.add(0, -36, 0);
             }
             playerLocation.add(1, 0, -sirkaCesty);
         }

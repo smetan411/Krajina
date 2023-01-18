@@ -48,8 +48,7 @@ public class KaceniStromu extends PlayerCommandExecutor{
         while(povrch.getBlock().getType() != Material.AIR && !jeStrom(povrch)) {
             povrch.add(0, 1, 0);
         }
-        while(povrch.clone().add(0, -1, 0).getBlock().getType() == Material.AIR &&
-                !jeStrom(povrch.clone().add(0, -1, 0))){
+        while(povrch.clone().add(0, -1, 0).getBlock().getType() == Material.AIR && !jeStrom(povrch.clone().add(0, -1, 0))){
             povrch.add(0, -1, 0);
         }
         return  povrch;

@@ -1,6 +1,7 @@
 package krajina.poloha;
 
 import org.bukkit.Location;
+import org.bukkit.block.Block;
 
 public class AbsLocation {
 
@@ -65,5 +66,9 @@ public class AbsLocation {
         double dy = getY() - bod.getY();
         double dz = getZ() - bod.getZ();
         return Math.sqrt(dy * dy + dz * dz);
+    }
+
+    public Block getBlock() {
+        return location.getBlock();
     }
 }

@@ -31,7 +31,7 @@ public class Jeskyne extends PlayerCommandExecutor {
                         aktualniBlok.setType(Material.AIR);
                     }
 
-                    // vytvoření podlahy
+                    // vytvoření podlahy -1
                     if ((vzdalenost <= polomer + 1) && (aktualniBlok.getY() == playerLocation.getY())) {
                         aktualniBlok.setType(Material.DIAMOND_BLOCK);
                     }
@@ -42,18 +42,17 @@ public class Jeskyne extends PlayerCommandExecutor {
                             aktualniBlok.setType(Material.DIAMOND_BLOCK);
                         }
                     }
-
-                    //  umístění 2 lamp
-                    Block lampa = world.getBlockAt(new Location(world, playerLocation.getX(), playerLocation.getY()+1, playerLocation.getZ() ));
-                    lampa.setType(Material.LANTERN);
-                    Location lanternLocation1 = new Location(world, playerLocation.getX(), playerLocation.getY() + (polomer - 2), playerLocation.getZ());
-                    Block lampa1 = world.getBlockAt(lanternLocation1);
-                    lampa1.setType(Material.LANTERN);
-
                 }
             }
         }
-        //player.teleport((new Location(world, playerLocation.getX()+(polomer+1), playerLocation.getY(), playerLocation.getZ())));
+        //  umístění 2 lamp
+        Block lampa = world.getBlockAt(new Location(world, playerLocation.getX(), playerLocation.getY()+1, playerLocation.getZ() ));
+        lampa.setType(Material.LANTERN);
+        Location lanternLocation1 = new Location(world, playerLocation.getX(), playerLocation.getY() + (polomer - 2), playerLocation.getZ());
+        Block lampa1 = world.getBlockAt(lanternLocation1);
+        lampa1.setType(Material.LANTERN);
+
+        player.teleport((new Location(world, playerLocation.getX()+(polomer+1), playerLocation.getY(), playerLocation.getZ())));
         return true;
     }
 }

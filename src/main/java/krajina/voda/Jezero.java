@@ -18,6 +18,8 @@ public class Jezero extends PlayerCommandExecutor {
                     polomer = 15;
                 }
             } catch (NumberFormatException exception) {
+                System.out.println("Mas zadat cislo.");
+                player.sendMessage("Nezadal jsi to dobre.");
             }
         }
         for (double x = playerLocation.getX() - polomer; x < playerLocation.getX() + polomer; x++) {
@@ -33,12 +35,14 @@ public class Jezero extends PlayerCommandExecutor {
                     double vzdalenost = Math.sqrt(xd * xd + yd * yd + zd * zd);
                     if (vzdalenost < polomer) {
                         Block aktualniBlok = world.getBlockAt(pozice);
-                        if (aktualniBlok.getType() != Material.AIR)
+                        if ((aktualniBlok.getType() != Material.AIR)&&(aktualniBlok.getY() < playerLocation.getY())) {
                             aktualniBlok.setType(Material.WATER);
+                        }
                     }
                 }
             }
         }
+        player.teleport((new Location(world, playerLocation.getX() + (polomer + 1), playerLocation.getY(), playerLocation.getZ())));
         return true;
     }
 }

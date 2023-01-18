@@ -5,7 +5,6 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
-
 import java.util.EnumSet;
 
 public class KaceniLesa extends PlayerCommandExecutor {

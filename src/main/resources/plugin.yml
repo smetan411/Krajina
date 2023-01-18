@@ -9,8 +9,12 @@ commands:
   +kopec:
   +kopecek:
   +jezero:
+  +jezeroVzduch:
+  +reka1:
+  +vodniKupole:
   +jeskyne:
   +cesta:
+  +cestaSJVZ:
   +trava:
   +kacejStrom:
   +kacejLes:
@@ -18,4 +22,6 @@ commands:
   +ostrovKruh:
   +ostrovObdAbs:
   +ostrovKruhAbs:
+  +polokoule:
   +zarovnejPovrch:
+  +vymazKolemHrace:
