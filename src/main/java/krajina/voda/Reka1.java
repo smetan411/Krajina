@@ -18,9 +18,6 @@ public class Reka1 extends PlayerCommandExecutor {
             for (double x = playerLocation.getX() - polomerReky; x < playerLocation.getX() + polomerReky; x++) {
                 for (double y = playerLocation.getY() - polomerReky; y < playerLocation.getY() + polomerReky; y++) {
                     Location pozice = new Location(world, x, y, z);
-                    if (y < 2) {
-                        continue;
-                    }
                     double xd = x - playerLocation.getX();
                     double yd = y - playerLocation.getY();
                     double vzdalenost = Math.sqrt(xd * xd + yd * yd);

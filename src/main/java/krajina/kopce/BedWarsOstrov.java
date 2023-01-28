@@ -7,7 +7,7 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-public class Polokoule extends PlayerCommandExecutor {
+public class BedWarsOstrov extends PlayerCommandExecutor {
 
     @Override
     public boolean onCommandPlayer(Player player, World world, Location playerLocation, String[] args) {
