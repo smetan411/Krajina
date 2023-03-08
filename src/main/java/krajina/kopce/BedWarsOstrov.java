@@ -42,7 +42,7 @@ public class BedWarsOstrov extends PlayerCommandExecutor {
                 }
             }
         }
-        player.teleport(new Location(world, playerLocation.getX(), playerLocation.getY() + polomer, playerLocation.getZ()));
+        player.teleport(new Location(world, playerLocation.getX(), playerLocation.getY(), playerLocation.getZ()));
         return true;
     }
 
