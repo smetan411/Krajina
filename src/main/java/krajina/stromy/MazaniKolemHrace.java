@@ -1,4 +1,4 @@
-package krajina.povrchy;
+package krajina.stromy;
 
 import krajina.PlayerCommandExecutor;
 import org.bukkit.Location;

@@ -13,11 +13,16 @@ import krajina.ostrovy.OstrovObdelnikAbs;
 import krajina.povrchy.*;
 import krajina.stromy.KaceniLesa;
 import krajina.stromy.KaceniStromu;
+import krajina.stromy.MazaniKolemHrace;
 import krajina.voda.Jezero;
 import krajina.voda.JezeroVzduch;
 import krajina.voda.Reka1;
 import krajina.voda.VodniKupole;
+import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class MainKrajina extends JavaPlugin {
@@ -49,5 +54,9 @@ public final class MainKrajina extends JavaPlugin {
         getCommand("+zarovnejPovrch").setExecutor(new ZarovnaniPovrchu());
         getCommand("+vymazKolemHrace").setExecutor(new MazaniKolemHrace());
 
+
+
     }
+
 }
+

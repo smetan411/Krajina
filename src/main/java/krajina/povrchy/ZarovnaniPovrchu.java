@@ -11,8 +11,8 @@ public class ZarovnaniPovrchu extends PlayerCommandExecutor {
 
     @Override
     public boolean onCommandPlayer(Player player, World world, Location playerLocation, String[] args) {
-        int delkaRoviny = 50;
-        int sirkaRoviny = 50;
+        int delkaRoviny = 100;
+        int sirkaRoviny = 100;
 
         playerLocation.add(-delkaRoviny / 2, -1, -sirkaRoviny / 2);
 
